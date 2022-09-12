@@ -20,6 +20,5 @@
 
 using namespace std;
 
-int firstBadVersion(int n) {
-        
-}
+bool isBadVersion(int unknVerNum, int badVerNum);
+int firstBadVersion(int n);
