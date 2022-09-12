@@ -3,17 +3,27 @@
 // support function for know answer
 bool isBadVersion(int unknVerNum, int badVerNum)
 {
-    return (unknVerNum == badVerNum);
+    return !(unknVerNum == badVerNum);
 }
 
-int firstBadVersion(int n)
-{
-    /*
-        Этапы:
-            1. Проверить последнюю версию на ошибку
-            2. Проверить версию по середине на ошибку
-            3. Проверить версию предпоследнюю на ошибку
-            4. Проверить версию посередине середины на ошибку и т.д.
-    
-    */
-}
+    int firstBadVersion(int n) {
+        int min = 0;
+        int max = n;
+        int search = (max + min)/2;
+        while(search > 0)
+        {
+            if((isBadVersion(search) == true) && (isBadVersion(search-1) == false))
+            {
+                break;
+            }
+            else if(isBadVersion(search) == true)
+            {
+                max = search;
+            }
+            else
+            {
+                min = search;
+            }
+        }
+        return search;
+    }
